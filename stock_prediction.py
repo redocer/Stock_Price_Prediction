@@ -3,11 +3,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 import streamlit as st
-import pandas as pd
 import pickle
-import re
-
-import matplotlib.pyplot as plt
 
 m = st.markdown("""
 <style>
