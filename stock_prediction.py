@@ -5,21 +5,16 @@ warnings.filterwarnings("ignore")
 import streamlit as st
 import pickle
 
-m = st.markdown("""
-<style>
-div.stButton > button:first-child {
-    width:44em;
-}
-</style>""", unsafe_allow_html=True)
-
 st.markdown("<h1 style='text-align: center; color: black;'>STOCK PREDICTION</h1>", unsafe_allow_html=True)
 st.markdown("<h2 style='text-align: center; color: green;'>XYZ Stock</h2>", unsafe_allow_html=True)
 
 input_number = st.number_input("Enter Nifty Open price:")
 
-run_model = st.button('Make Prediction')
+col11, col22, col33 = st.columns([2, 1, 2])
+with col22:
+    run_model = st.button('Make Prediction')
 
-filename = 'N:\\PROJECTS\\NEW_NOTEBOOKS\\Streamlit\\model.sav'
+filename = 'model.sav'
 
 if run_model:
     model = pickle.load(open(filename, 'rb'))
